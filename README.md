@@ -136,7 +136,41 @@ Normalmente, cuando un certificado SSL está instalado, tendremos 2 server block
 Si has investigado un poco sobre certificados autofirmados puede que te hayas encontrado con el término <b>snakeoil.</b> Este término hace referencia a un concepto de criptografía utilizado para hacer referencia a cualquier método o producto criptográfico considerado falso o fraudulento.
 
 ### LEMP Stack
+<b>LEMP</b> es un grupo software que se puede utilizar para servir páginas web dinámicas y aplicaciones web. Este es un acrónimo que describe: el OS <b>Linux</b> (en nuestro caso Debian), con un servidor web <b>Nginx</b>, una base de datos <b>MySQL</b> (en nuestro caso MariaDB) y el procesamiento dinámico es manejado por <b>PHP</b>.
 
+### MariaDB
+Una <b>base de datos</b> es un conjunto de datos pertenecientes a un mismo contexto y almacenados sistemáticamente para su posterior uso. En informática, es una colección organizada de información estructurada, o <b>datos</b>, típicamente almacenados en un sistema de computadoras.<br> El software utilizado para gestionar una base de datos recibe el nombre de <b>"Database Management System" (DBMS).</b><br>
+Existen dos tipos de bases de datos
+<ul>
+  <li><b>Bases de datos relacionales:</b> MySQL.</li>
+  <li><b>Bases de datos no relacionales.</b> MongoDB.</li>
+</ul>
+<br>
+Las bases de datos relacionales se basan en la organización de la información en partes pequeñas que se integran mediante indentificadores; a diferencia de las bases de datos no relacionales que, como su nombre indica, no tienen un identificador que sirva para relacionar dos o más conjuntos de datos.
+<ul>
+  <li>Cada tabla consiste en un conjunto de filas y de columnas.</li>
+  <li>Cada fila contiene información sobre una sola entidad. Esto se conoce como <b>record.</b></li>
+  <li>Cada columna contiene información sobre las entidades. Esto se conoce como <b>atributo</b> o <b>campo.</b></li>
+</ul>
+<br>
+Una manera de gestionar los datos de una base de datos es <b>SQL.</b> Casi todos los DBMS's utilizan SQL, como <b>MariaDB</b> o <b>MySQL.</b><br>
+<br>
+Una vez instalado el servidor web Nginx, necesitamos un sistema de gestión de bases de datos para almecenar y gestionar los datos de nuestro sitio. En nuestro caso utilizamos <b>MariaDB.</b> MariaDB nos va a permitir crear nuestras propias bases de datos y tablas, así como decidir qué usuarios pueden acceder a ellos y modificarlos. Del mismo modo, MariaDB tiene una sintaxis sencilla que nos va a permitir hacer todo esto. Sin embargo, pese a su sencillez, nos puede resultar mucho más útil utilizar un panel de control para administrar nuestra base de datos. Este panel de control lo obtendremos con la instalación de <b>PhpMyAdmin.</b><br>
+
+### PHP
+Un sitio web es un sitio en la <b>World Wide Web</b> que contiene documentos organizados jerárquicamente. Cada documento contiene texto y/o gráficas que aparecen con información digital en la pantalla del ordenador. Una de las divisiones que podríamos hacer entre todos los tipos de páginas web existentes son:
+<ul>
+  <li><b>Página Web Estática:</b> aquella página enfocada principalmente a mostrar información permanente, donde el navegante se limita a obtener dicha información, sin poder interactuar con la página web.</li>
+  <li><b>Página Web Dinámica:</b> aquella que contiene applicaciones dentro de la propia web, otorgando mayor interactividad con el navegante.</li>
+</ul>
+<br>
+Las extensiones más habituales de las páginas web son:
+<ul>
+  <li><b>html, html, asp, jsp, php</b> --> únicamente los .html o .html son páginas web estáticas y ,por tanto, las únicas que podremos ver directamente en el navegador. El resto, para poder visualizarse, deberán estar contenidos en un servidor web. <b>Nginx</b> utiliza <b>FPM (FastCGI Process Manager)</b> para procesar los scripts de PHP. <b>FPM</b> es una buena alternativa a FastCGI.</li>
+</ul>
+
+### PhpMyAdmin
+Herramienta escrita en <b>PHP</b> con la intención de manejar la administración de <b>MySQL</b> a través de páginas web utilizando un navegador web. Actualmente puede crear y eliminar bases de datos; crear, eliminar y alterar tablas; borrar, editar y añadir campos; etc.
 
 
 
