@@ -135,6 +135,9 @@ Normalmente, cuando un certificado SSL está instalado, tendremos 2 server block
 ##### Snakeoil
 Si has investigado un poco sobre certificados autofirmados puede que te hayas encontrado con el término <b>snakeoil.</b> Este término hace referencia a un concepto de criptografía utilizado para hacer referencia a cualquier método o producto criptográfico considerado falso o fraudulento.
 
+##### Autoindex
+De forma predeterminada, Nginx intenta mostrar una lista de directorios cuando una URL en particular termine en <b>/</b>. Por ejemplo, si usara una ruta <b>/assets/css/</b>, Nginx buscaría en el directorio <b>/css/</b> para ver si puede encontrar un <b>index.html</b> presente, y si no es así nos dará un error 404. Sin embargo, en el caso de que sí tenga un index.html en el directorio, Nginx lo usará para mostrar una lista de directorios de los archivos que hay dentro del directorio.
+
 ### LEMP Stack
 <b>LEMP</b> es un grupo software que se puede utilizar para servir páginas web dinámicas y aplicaciones web. Este es un acrónimo que describe: el OS <b>Linux</b> (en nuestro caso Debian), con un servidor web <b>Nginx</b>, una base de datos <b>MySQL</b> (en nuestro caso MariaDB) y el procesamiento dinámico es manejado por <b>PHP</b>.
 
@@ -172,11 +175,8 @@ Las extensiones más habituales de las páginas web son:
 ### PhpMyAdmin
 Herramienta escrita en <b>PHP</b> con la intención de manejar la administración de <b>MySQL</b> a través de páginas web utilizando un navegador web. Actualmente puede crear y eliminar bases de datos; crear, eliminar y alterar tablas; borrar, editar y añadir campos; etc.
 
-
-
-
-
-
+### Wordpress
+Wordpress es un sistema de gestión de contenidos enfocado a la creación de cualquier tipo de página web. Hay muchas aplicaciones de este tipo, las cuales se conocen también como <b>Content Management System (CMS)</b>. La razón por la cual usar este tipo de aplicaciones es muy simple: permiten crear webs y sus cnotenidos de una forma visual, sin tener que programar.
 
 ### Vocabulario
 - Crowler
