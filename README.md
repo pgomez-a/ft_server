@@ -185,7 +185,7 @@ La idea detrás de Docker es crear contenedores ligeros y portables para las apl
   <li><b>Imagen:</b> una imagen es una representación estática de la aplicación o el servicio y de su configuración y dependencias. Para ejecutar la aplicación, se crea una instancia de la images de la aplicación para crear un contenedor, que se ejecutará en el host de Docker.</li>
   <li><b>Dockerfile:</b> archivo que utiliza Docker para leer una configuración. Contiene todos los comandos que queramos ejecutar en la línea de comandos para armar una imágen.</li>
 </ul>
-<br
+<br>
 Una vez hayas leído un poco sobre Docker y cómo funciona, verás que hay una serie de comandos muy útiles que tendrás que utilizar con frecuencia. Mi objetivo con este README es que seas capaz de entender el por qué necesitas crear un servidor web y por qué utilizas los programas que utilizas, así que por eso me centraré únicamente en explicar el funcionamiento de cada uno sin poner ejemplos (recuerda que debes leer más de una fuente para realizar tus proyectos):
 <ul>
   <li><b>docker images:</b> proporciona una lista de las imágenes instaladas. Estas imágenes aparecen en una tabla donde se indica: nombre de la imagen, versión utilizada, identificador único de la imagen, fecha de publicación y peso.</li>
