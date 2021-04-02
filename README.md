@@ -178,6 +178,27 @@ Herramienta escrita en <b>PHP</b> con la intención de manejar la administració
 ### Wordpress
 Wordpress es un sistema de gestión de contenidos enfocado a la creación de cualquier tipo de página web. Hay muchas aplicaciones de este tipo, las cuales se conocen también como <b>Content Management System (CMS)</b>. La razón por la cual usar este tipo de aplicaciones es muy simple: permiten crear webs y sus cnotenidos de una forma visual, sin tener que programar.
 
+### Docker
+La idea detrás de Docker es crear contenedores ligeros y portables para las aplicaciones software que puedan ejecutarse en cualquier máquina con Docker instalado, independientemente del OS que el sistema tenga por debajo. A la hora de hablar de Docker, manejaremos diferentes conceptos:
+<ul>
+  <li><b>Contenedor:</b> es algo autocontenido en sí, que se puede llevar de un lado a otro de forma independiente, es <b>portable.</b> Para que podamos acceder como usuarios normales a una aplicación, dicha aplicación software necesita estar ejecutándose en una máquina (contenedor). Dicho contenedor necesita tener instalados una serie de programas para que la aplicación se ejecute correctamente. Así pues, Docker me permite meter en un contenedor todos aquellos programas que mi ordenador necesita para que la aplicación sea ejecutada. De este modo, dicha aplicación podrá ser ejecutada en cualquier máquina que tenga Docker instalado, sin necesitar de ningún requisito más.</li>
+  <li><b>Imagen:</b> una imagen es una representación estática de la aplicación o el servicio y de su configuración y dependencias. Para ejecutar la aplicación, se crea una instancia de la images de la aplicación para crear un contenedor, que se ejecutará en el host de Docker.</li>
+  <li><b>Dockerfile:</b> archivo que utiliza Docker para leer una configuración. Contiene todos los comandos que queramos ejecutar en la línea de comandos para armar una imágen.</li>
+</ul>
+<br
+Una vez hayas leído un poco sobre Docker y cómo funciona, verás que hay una serie de comandos muy útiles que tendrás que utilizar con frecuencia. Mi objetivo con este README es que seas capaz de entender el por qué necesitas crear un servidor web y por qué utilizas los programas que utilizas, así que por eso me centraré únicamente en explicar el funcionamiento de cada uno sin poner ejemplos (recuerda que debes leer más de una fuente para realizar tus proyectos):
+<ul>
+  <li><b>docker images:</b> proporciona una lista de las imágenes instaladas. Estas imágenes aparecen en una tabla donde se indica: nombre de la imagen, versión utilizada, identificador único de la imagen, fecha de publicación y peso.</li>
+  <li><b>docker search:</b> para buscar el nombre de la imagen que queremos instalar desde la consola de comandos.</li>
+  <li><b>docker pull:</b> permite instalar una imagen.</li>
+  <li><b>docker run:</b> nos permite ejecutar una imagen.</li>
+  <li><b>docker ps:</b> nos permite ver los contenedores que se encuentran en ejecución.</li>
+  <li><b>docker start:</b> vuelve a ejecutar un contenedor que ha sido parado.</li>
+  <li><b>docker stop:</b> finaliza un contenedor que se encuentra en ejecución.</li>
+  <li><b>docker rm:</b> elimina un contenedor que ya ha sido finalizado.</li>
+  <li>b>docker attach:</b> nos permite establecer la conexión de un contenedor es primer plano.</li>
+</ul>
+
 ### Vocabulario
 - Crowler
 - Servicio
