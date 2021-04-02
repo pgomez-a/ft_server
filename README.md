@@ -22,7 +22,7 @@ The <b> client-server </b> model makes it possible to distribute tasks among dif
 The main task of a web server is to save and organize web pages and deliver them to clients such as web browsers or <b> crowlers. </b> Communication between server and client is based on <b> HTTP </b>, that is, in the hypertext transfer protocol; or in HTTPS, which is its encoded variant. As a rule, HTML documents and the elements embedded in it are transmitted. <br>
 The most popular web servers are: <b> HTTP Apache, Internet Information Server (ISS) and Nginx. </b>
 
-### ¿Qué es Debian?
+### What is Debian?
 Debian is an all-volunteer organization dedicated to developing free software and promoting the ideals of the free software community. The Debian project arises with the intention of creating a new <b> distribution (OS) based on the Linux kernel. </b> <br>
 <br>
 <b> Linux </b> is an OS: a set of programs that allows the user to interact with the computer and run other programs. Therefore, we can say that an operating system consists of several fundamental programs that the computer needs to be able to communicate and receive instructions from users.
@@ -34,10 +34,10 @@ Linux is modeled after a Unix-type OS. From the beginning, it was developed to b
   <li><b> Multi-user: </b> allows to provide service and processing to several users simultaneously.</li>
 </ul>
 
-##### ¿Qué es el proyecto GNU?
+##### What is the GNU project?
 The GNU project has developed a set of free software tools to be used by <b> UNIX </b> and other <b> Unix-type OS </b>, such as Linux. These tasks allow both creating and deleting files and compiling programs, among many other things.
 
-##### Árbol de directivas de Debian
+##### Debian Directory Tree
 The structure of Linux directories, as well as their content and functions, is defined in the <b> Filesystem Hierarchy Standard (FHS) </b>. The whole tree starts from a common root called <b> root (/) </b>. The <b> FHS </b> distinguishes between:
 <ul>
   <li><b> Static Directories vs Dynamic Directories. </b></li>
