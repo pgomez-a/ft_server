@@ -196,12 +196,12 @@ Una vez hayas leído un poco sobre Docker y cómo funciona, verás que hay una s
   <li><b>docker start:</b> vuelve a ejecutar un contenedor que ha sido parado.</li>
   <li><b>docker stop:</b> finaliza un contenedor que se encuentra en ejecución.</li>
   <li><b>docker rm:</b> elimina un contenedor que ya ha sido finalizado.</li>
-  <li>b>docker attach:</b> nos permite establecer la conexión de un contenedor es primer plano.</li>
+  <li><b>docker attach:</b> nos permite establecer la conexión de un contenedor es primer plano.</li>
 </ul>
 
 ### Vocabulario
-- Crowler
-- Servicio
-- Kernel Linux
-- PID
-- Proceso
+<b>Crowler:</b> programa informático que inspecciona páginas de la World Wide Web de forma metódica y automatizada.
+<b>Servicio:</b> conjunto de actividades que buscan responder a las necesidades de un cliente.
+<b>Kernel Linux:</b> núcleo del OS Linux. Su principal función es encargarse de controlar el hardware del ordenador. Concretamente, este núcleo es el responsable de gestionar la memoria del sistema y el tiempo de los procesos.
+<b>PID:</b> identificador de procesos, número entero usando por el kernel de algunos OS para identificar un proceso de forma unívoca. Es decir, cada proceso se numera para diferenciarlo del reso.
+<b>Proceso:</b> programa en ejecución.
