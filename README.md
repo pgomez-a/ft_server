@@ -96,45 +96,45 @@ It is used to store all files that are read-only and related to user utilities, 
 It contains several files with system information, such as log files, emails from system users, databases, etc.
 
 ### Nginx
-Famoso software de servidor web de código abierto. En términos prácticos se define como un software que procesa las solicitudes de los usuarios de la red y que garantiza que se lleve a cabo el intercambio de información.<br>
-Su desarrollo se ha centrado en la creación de un servidor que se caracterice por un rendimiento muy alto, que sirva al mayor número de clientes posibles al mismo tiempo y que además consuma la menor cantidad de recursos posibles.<br>
-Al igual que Apache, Nginx es un software modular. Esto significa que las diferentes características son presentadas en forma de módulos y, como administrador, pueden ser activadas o desactivadas. En caso de estar activadas, algunas de las características de las que goza el usuario son:
+Famous open source web server software. In practical terms it is defined as a software that processes the requests of the users of the network and that guarantees that the exchange of information takes place. <br>
+Its development has focused on creating a server that is characterized by a very high performance, that serves as many clients as possible at the same time and that also consumes the least amount of resources possible. <br>
+Like Apache, Nginx is modular software. This means that the different features are presented in the form of modules and, as an administrator, they can be activated or deactivated. If activated, some of the features that the user enjoys are:
 <ul>
-  <li><b>Application Aceleration:</b> agiliza la entrega de contenidos.</li>
-  <li><b>Servidor Proxy Inverso:</b> un proxy es un servidor que permite la comunicación de solicitud y respuesta entre cliente-servidor. El caso inverso, en que la solicitud la realiza el servidor, se trata de un proxy inverso.</li>
-  <li><b>Cifrado TLS:</b> para una transferencia de datos segura.</li>
-  <li><b>Gestión de ancho de banda:</b> para mejorar el rendimiento.</li>
+  <li><b> Application Acceleration: </b> streamlines content delivery.</li>
+  <li><b> Reverse Proxy Server: </b> a proxy is a server that allows request and response communication between client-server. The reverse case, where the request is made by the server, is a reverse proxy.</li>
+  <li><b> TLS encryption: </b> for secure data transfer.</li>
+  <li><b> Bandwidth management: </b> to improve performance.</li>
 </ul>
 <br>
-Mientras que Apache abre un proceso o hilo por cada solicitud de un cliente, Nginx trabaja <b>enfocado a eventos.</b> Apache, al crear un proceso por cada solicitud, malgasta recursos haciendo que la carga del servidor aumente y que el usuario tenga que esperar para poder acceder al servidor. Mientras tanto, Nginx es capaz de gestionar todas las solicitudes en pocos procesos gracias a su arquitectura orientada a eventos, lo que le permite ahorrar recursos.<br>
+While Apache opens a process or thread for each request from a client, Nginx works <b> focused on events. </b> Apache, by creating a process for each request, wastes resources making the server load increase and the user has to wait to be able to access the server. Meanwhile, Nginx is able to handle all requests in a few processes thanks to its event-oriented architecture, which saves resources. <br
 
-##### Directivas
-Todos los archivos de configuración de Nginx se encuentran en el directorio <b>/etc/nginx/</b>, lo cual concuerda con la jerarquía FHS que veíamos en el apartado de <b>Debian.</b> El archivo principal de configuración es <b>nginx.conf.</b><br>
-En Nginx las opciones de configuración reciben el nombre de <b>directivas.</b> Estas se organizan en grupos denominados bloques. En este archivo nos encontramos con cuatro directivas de configuración fundamentales:
+##### Directives
+All Nginx configuration files are located in the <b> /etc/nginx/ </b> directory, which is related with the FHS hierarchy that we saw in the <b> Debian section. </b> The main configuration file is <b> nginx.conf. </b> <br>
+In Nginx, configuration options are called <b> directives. </b> These are organized in groups called blocks. In this file we find four fundamental configuration directives:
 <ul>
-  <li><b>user:</b> define las credenciales de usuario y grupo utilizado por los procesos de trabajo.</b>
-  <li><b>worker-processes:</b> define el número de procesos de trabajo. El valor óptimo depende de los componentes del computador. Por esto es aconsejable utilizar el valor <b>auto</b> para encontrar el valor óptimo para dicho valor.</li>
-  <li><b>error_log:</b> configura el registro.</li>
-  <li><b>pid:</b> define un archivo que almacenará el ID del proceso principal</li>
+  <li><b> user: </b> defines the user and group credentials used by worker processes.</b></li>
+  <li><b> worker-processes: </b> defines the number of worker processes. The optimal value depends on the components of the computer. For this reason, it is advisable to use the value <b> auto </b> to find the optimal value for that value.</li>
+  <li><b> error_log: </b> configures the log.</li>
+  <li><b> pid: </b> defines a file that will store the ID of the main process.</li>
 </ul>
-Puedes crear archivos de configuración individuales para cada servidor virtual y guardarlos en la carpeta <b>/etc/nginx/sites-available/</b>, donde podrás modificarlos cada vez que necesites. Para que Nginx tome en cuenta estos cambios, los archivos deben estar en la carpeta <b>/etc/nginx/sites-enabled/</b>.<br>
-El archivo de configuración principal recibe el nombre de <b>default</b>, y utiliza las siguientes directivas:
+You can create individual configuration files for each virtual server and save them in the <b> /etc/nginx/sites-available/ </b> folder, where you can modify them whenever you need. For Nginx to take these changes into account, the files must be in the <b> /etc/nginx/sites-enabled/ </b> folder. <br>
+The main configuration file is named <b> default </b>, and uses the following directives:
 <ul>
-  <li><b>listen:</b> especifica el puerto 80 como el estándar del servicio <b>HTTPS.</b></li>
-  <li><b>root:</b> es la ruta del directorio con el contenido web.</li>
-  <li><b>index:</b> archivos por defecto que se sirven cuando la URL no especifica un archivo en concreto.</li>
-  <li><b>server_name:</b> dominio al que se asocia el servidor.</li>
+  <li><b> listen: </b> specifies the port through which <b> HTTP communication is made. </b></li>
+  <li><b> root: </b> is the path of the directory with the web content.</li>
+  <li><b> index: </b> default files that are served when the URL does not specify a specific file.</li>
+  <li><b> server_name: </b> domain to which the server is associated.</li>
 </ul>
 
-##### Configuración HTTPS con certificado SSL
-El <b>certificado SSL</b> es un estándar de seguridad global que permite la transferencia de datos cifrados entre un navegador y un servidor web. Básicamente, la capa <b>SSL</b> permite que dos partes tengan una conversación privada. Para poder utilizar el protocolo seguro HTTPS en un servidor en pruebas o en red local, podremos utilizar <b>certificados autofirmados.</b><br>
-Un <b>certificado autofirmado</b> es aquel que no ha sido validado por una <b>Autoridad Certificadora (CA)</b>. El nivel de cifrado puede ser igual al de cualquier otro tipo de certificado, pero al no estar validado por una CA, el navegador mostrará una advertencia cuando se muestre el sitio.<br>
+##### HTTPS configuration with SSL certificate
+The <b> SSL certificate </b> is a global security standard that enables the transfer of encrypted data between a browser and a web server. Basically, the <b> SSL </b> layer allows two parties to have a private conversation. In order to use the secure HTTPS protocol on a test server or on a local network, we can use <b> self-signed certificates. </b> <br>
+A <b> self-signed certificate </b> is one that has not been validated by a <b> Certificate Authority (CA) </b>. The level of encryption can be the same as any other type of certificate, but as it is not validated by a CA, the browser will display a warning when the site is displayed. <br>
 
-##### Redireccionamiento HTTP a HTTPS
-Normalmente, cuando un certificado SSL está instalado, tendremos 2 server blocks para el mismo dominio. El primero será para la versión HTTP en el puerto 80 y el segundo para la versión HTTPS en el puerto 443. De este modo, para conseguir una redirección HTTP a HTTPS, haremos que las peticiones relizadas en el puerto 80 sean redireccionadas de manera permanente mediante el uso de directivas especiales de redirección.
+##### HTTP to HTTPS redirection
+Normally, when an SSL certificate is installed, we will have 2 server blocks for the same domain. The first will be for the HTTP version on port 80 and the second for the HTTPS version on port 443. In this way, to achieve an HTTP redirection to HTTPS, we will make the requests made on port 80 be permanently redirected using special redirect directives.
 
 ##### Snakeoil
-Si has investigado un poco sobre certificados autofirmados puede que te hayas encontrado con el término <b>snakeoil.</b> Este término hace referencia a un concepto de criptografía utilizado para hacer referencia a cualquier método o producto criptográfico considerado falso o fraudulento.
+If you've done some research on self-signed certificates you may have come across the term <b> snakeoil. </b> This term refers to a cryptography concept used to refer to any cryptographic method or product considered false or fraudulent.
 
 ##### Autoindex
 De forma predeterminada, Nginx intenta mostrar una lista de directorios cuando una URL en particular termine en <b>/</b>. Por ejemplo, si usara una ruta <b>/assets/css/</b>, Nginx buscaría en el directorio <b>/css/</b> para ver si puede encontrar un <b>index.html</b> presente, y si no es así nos dará un error 404. Sin embargo, en el caso de que sí tenga un index.html en el directorio, Nginx lo usará para mostrar una lista de directorios de los archivos que hay dentro del directorio.
@@ -143,66 +143,66 @@ De forma predeterminada, Nginx intenta mostrar una lista de directorios cuando u
 <b>LEMP</b> es un grupo software que se puede utilizar para servir páginas web dinámicas y aplicaciones web. Este es un acrónimo que describe: el OS <b>Linux</b> (en nuestro caso Debian), con un servidor web <b>Nginx</b>, una base de datos <b>MySQL</b> (en nuestro caso MariaDB) y el procesamiento dinámico es manejado por <b>PHP</b>.
 
 ### MariaDB
-Una <b>base de datos</b> es un conjunto de datos pertenecientes a un mismo contexto y almacenados sistemáticamente para su posterior uso. En informática, es una colección organizada de información estructurada, o <b>datos</b>, típicamente almacenados en un sistema de computadoras.<br> El software utilizado para gestionar una base de datos recibe el nombre de <b>"Database Management System" (DBMS).</b><br>
-Existen dos tipos de bases de datos
+A <b> database </b> is a set of data belonging to the same context and systematically stored for later use. In computing, it is an organized collection of structured information, or <b> data </b>, typically stored in a computer system. <br> The software used to manage a database is called <b> "Database Management System "(DBMS). </b> <br>
+There are two types of databases:
 <ul>
-  <li><b>Bases de datos relacionales:</b> MySQL.</li>
-  <li><b>Bases de datos no relacionales.</b> MongoDB.</li>
+  <li><b> Relational databases: </b> MySQL.</li>
+  <li><b> Non-relational databases. </b> MongoDB.</li>
 </ul>
 <br>
-Las bases de datos relacionales se basan en la organización de la información en partes pequeñas que se integran mediante indentificadores; a diferencia de las bases de datos no relacionales que, como su nombre indica, no tienen un identificador que sirva para relacionar dos o más conjuntos de datos.
+Relational databases are based on the organization of information in small parts that are integrated by means of identifiers; unlike non-relational databases, which, as the name suggests, do not have an identifier that can be used to relate two or more data sets.
 <ul>
-  <li>Cada tabla consiste en un conjunto de filas y de columnas.</li>
-  <li>Cada fila contiene información sobre una sola entidad. Esto se conoce como <b>record.</b></li>
-  <li>Cada columna contiene información sobre las entidades. Esto se conoce como <b>atributo</b> o <b>campo.</b></li>
+  <li>Each table consists of a set of rows and columns.</li>
+  <li>Each row contains information about a single entity. This is known as a <b> record. </b></li>
+  <li>Each column contains information about the entities. This is known as <b> attribute </b> or <b> field. </b></li>
 </ul>
 <br>
-Una manera de gestionar los datos de una base de datos es <b>SQL.</b> Casi todos los DBMS's utilizan SQL, como <b>MariaDB</b> o <b>MySQL.</b><br>
+One way to manage the data in a database is <b> SQL. </b> Almost all DBMSs use SQL, like <b> MariaDB </b> or <b> MySQL. </b> <br>
 <br>
-Una vez instalado el servidor web Nginx, necesitamos un sistema de gestión de bases de datos para almecenar y gestionar los datos de nuestro sitio. En nuestro caso utilizamos <b>MariaDB.</b> MariaDB nos va a permitir crear nuestras propias bases de datos y tablas, así como decidir qué usuarios pueden acceder a ellos y modificarlos. Del mismo modo, MariaDB tiene una sintaxis sencilla que nos va a permitir hacer todo esto. Sin embargo, pese a su sencillez, nos puede resultar mucho más útil utilizar un panel de control para administrar nuestra base de datos. Este panel de control lo obtendremos con la instalación de <b>PhpMyAdmin.</b>
+Once the Nginx web server is installed, we need a database management system to store and manage the data for our site. In our case we use <b> MariaDB. </b> MariaDB will allow us to create our own databases and tables, as well as decide which users can access and modify them. In the same way, MariaDB has a simple syntax that will allow us to do all this. However, despite its simplicity, it can be much more useful to use a control panel to manage our database. We will obtain this control panel with the installation of <b> PhpMyAdmin. </b>
 
 ### PHP
-Un sitio web es un sitio en la <b>World Wide Web</b> que contiene documentos organizados jerárquicamente. Cada documento contiene texto y/o gráficas que aparecen con información digital en la pantalla del ordenador. Una de las divisiones que podríamos hacer entre todos los tipos de páginas web existentes son:
+A website is a site on the <b> World Wide Web </b> that contains hierarchically organized documents. Each document contains text and / or graphics that appear with digital information on the computer screen. One of the divisions that we could make between all the types of existing web pages are:
 <ul>
-  <li><b>Página Web Estática:</b> aquella página enfocada principalmente a mostrar información permanente, donde el navegante se limita a obtener dicha información, sin poder interactuar con la página web.</li>
-  <li><b>Página Web Dinámica:</b> aquella que contiene applicaciones dentro de la propia web, otorgando mayor interactividad con el navegante.</li>
+  <li><b> Static Web Page: </b> that page mainly focused on displaying permanent information, where the navigator is limited to obtaining said information, without being able to interact with the web page.</li>
+  <li><b> Dynamic Web Page: </b> one that contains applications within the web itself, providing greater interactivity with the navigator.</li>
 </ul>
 <br>
-Las extensiones más habituales de las páginas web son:
+The most common extensions of web pages are:
 <ul>
-  <li><b>html, html, asp, jsp, php</b> --> únicamente los .html o .html son páginas web estáticas y ,por tanto, las únicas que podremos ver directamente en el navegador. El resto, para poder visualizarse, deberán estar contenidos en un servidor web. <b>Nginx</b> utiliza <b>FPM (FastCGI Process Manager)</b> para procesar los scripts de PHP. <b>FPM</b> es una buena alternativa a FastCGI.</li>
+  <li><b> html, htm, asp, jsp, php </b> -> only the .html or .htm are static web pages and, therefore, the only ones that we can see directly in the browser. The rest, in order to be viewed, must be contained in a web server. <b> Nginx </b> uses <b> FPM (FastCGI Process Manager) </b> to process PHP scripts. <b> FPM </b> is a good alternative to FastCGI.</li>
 </ul>
 
 ### PhpMyAdmin
-Herramienta escrita en <b>PHP</b> con la intención de manejar la administración de <b>MySQL</b> a través de páginas web utilizando un navegador web. Actualmente puede crear y eliminar bases de datos; crear, eliminar y alterar tablas; borrar, editar y añadir campos; etc.
+Tool written in <b> PHP </b> with the intention of managing <b> MySQL </b> administration through web pages using a web browser. You can currently create and delete databases; create, delete and alter tables; delete, edit and add fields; etc.
 
 ### Wordpress
-Wordpress es un sistema de gestión de contenidos enfocado a la creación de cualquier tipo de página web. Hay muchas aplicaciones de este tipo, las cuales se conocen también como <b>Content Management System (CMS)</b>. La razón por la cual usar este tipo de aplicaciones es muy simple: permiten crear webs y sus cnotenidos de una forma visual, sin tener que programar.
+Wordpress is a content management system focused on the creation of any type of web page. There are many applications of this type, which are also known as <b> Content Management System (CMS) </b>. The reason why using this type of application is very simple: they allow you to create websites and their contents in a visual way, without having to program.
 
 ### Docker
-La idea detrás de Docker es crear contenedores ligeros y portables para las aplicaciones software que puedan ejecutarse en cualquier máquina con Docker instalado, independientemente del OS que el sistema tenga por debajo. A la hora de hablar de Docker, manejaremos diferentes conceptos:
+The idea behind Docker is to create lightweight and portable containers for software applications that can run on any machine with Docker installed, regardless of the operating system that the system has underneath. When talking about Docker, we will handle different concepts:
 <ul>
-  <li><b>Contenedor:</b> es algo autocontenido en sí, que se puede llevar de un lado a otro de forma independiente, es <b>portable.</b> Para que podamos acceder como usuarios normales a una aplicación, dicha aplicación software necesita estar ejecutándose en una máquina (contenedor). Dicho contenedor necesita tener instalados una serie de programas para que la aplicación se ejecute correctamente. Así pues, Docker me permite meter en un contenedor todos aquellos programas que mi ordenador necesita para que la aplicación sea ejecutada. De este modo, dicha aplicación podrá ser ejecutada en cualquier máquina que tenga Docker instalado, sin necesitar de ningún requisito más.</li>
-  <li><b>Imagen:</b> una imagen es una representación estática de la aplicación o el servicio y de su configuración y dependencias. Para ejecutar la aplicación, se crea una instancia de la images de la aplicación para crear un contenedor, que se ejecutará en el host de Docker.</li>
-  <li><b>Dockerfile:</b> archivo que utiliza Docker para leer una configuración. Contiene todos los comandos que queramos ejecutar en la línea de comandos para armar una imágen.</li>
+  <li><b> Container: </b> is something self-contained in itself, which can be carried from one place to another independently, it is <b> portable. </b> So that we can access an application as normal users, said software application needs to be running on a machine (container). This container needs to have a series of programs installed for the application to run correctly. Thus, Docker allows me to put in a container all those programs that my computer needs for the application to be executed. In this way, said application can be run on any machine that has Docker installed, without the need for any further requirements.</li>
+  <li><b> Image: </b> an image is a static representation of the application or service and its configuration and dependencies. To run the application, an instance of the application images is created to create a container, which will run on the Docker host. </li>
+  <li> <b> Dockerfile: </b> file that Docker uses to read a configuration. It contains all the commands that we want to execute on the command line to build an image.</li>
 </ul>
 <br>
-Una vez hayas leído un poco sobre Docker y cómo funciona, verás que hay una serie de comandos muy útiles que tendrás que utilizar con frecuencia. Mi objetivo con este README es que seas capaz de entender el por qué necesitas crear un servidor web y por qué utilizas los programas que utilizas, así que por eso me centraré únicamente en explicar el funcionamiento de cada uno sin poner ejemplos (recuerda que debes leer más de una fuente para realizar tus proyectos):
+Once you have read a little about Docker and how it works, you will see that there are a number of very useful commands that you will have to use frequently. My goal with this README is for you to be able to understand why you need to create a web server and why you use the programs you use, so that is why I will focus solely on explaining how each one works without giving examples (remember that you must read more than one source to carry out your projects):
 <ul>
-  <li><b>docker images:</b> proporciona una lista de las imágenes instaladas. Estas imágenes aparecen en una tabla donde se indica: nombre de la imagen, versión utilizada, identificador único de la imagen, fecha de publicación y peso.</li>
-  <li><b>docker search:</b> para buscar el nombre de la imagen que queremos instalar desde la consola de comandos.</li>
-  <li><b>docker pull:</b> permite instalar una imagen.</li>
-  <li><b>docker run:</b> nos permite ejecutar una imagen.</li>
-  <li><b>docker ps:</b> nos permite ver los contenedores que se encuentran en ejecución.</li>
-  <li><b>docker start:</b> vuelve a ejecutar un contenedor que ha sido parado.</li>
-  <li><b>docker stop:</b> finaliza un contenedor que se encuentra en ejecución.</li>
-  <li><b>docker rm:</b> elimina un contenedor que ya ha sido finalizado.</li>
-  <li><b>docker attach:</b> nos permite establecer la conexión de un contenedor es primer plano.</li>
+  <li><b> docker images: </b> provides a list of installed images. These images appear in a table where it is indicated: image name, version used, unique identifier of the image, publication date and weight.</li>
+  <li><b> docker search: </b> to find the name of the image that we want to install from the command console.</li>
+  <li><b> docker pull: </b> allows you to install an image</li>
+  <li><b> docker run: </b> allows us to run an image.</li>
+  <li><b> docker ps: </b> allows us to see the containers that are running.</li>
+  <li><b> docker start: </b> reruns a container that has been stopped.</li>
+  <li><b> docker stop: </b> ends a running container</li>
+  <li><b> docker rm: </b> removes a container that has already been terminated.</li>
+  <li><b> docker attach: </b> allows us to establish the connection of a container in the foreground.</li>
 </ul>
 
 ### Vocabulario
-<b>Crowler:</b> programa informático que inspecciona páginas de la World Wide Web de forma metódica y automatizada.
-<b>Servicio:</b> conjunto de actividades que buscan responder a las necesidades de un cliente.
-<b>Kernel Linux:</b> núcleo del OS Linux. Su principal función es encargarse de controlar el hardware del ordenador. Concretamente, este núcleo es el responsable de gestionar la memoria del sistema y el tiempo de los procesos.
-<b>PID:</b> identificador de procesos, número entero usando por el kernel de algunos OS para identificar un proceso de forma unívoca. Es decir, cada proceso se numera para diferenciarlo del reso.
-<b>Proceso:</b> programa en ejecución.
+<b> Crowler: </b> computer program that inspects pages of the World Wide Web in a methodical and automated way.
+<b> Service: </b> set of activities that seek to respond to the needs of a client.
+<b> Linux kernel: </b> Linux OS kernel. Its main function is to be in charge of controlling the computer hardware. Specifically, this kernel is responsible for managing the system memory and the time of the processes.
+<b> PID: </b> process identifier, integer number used by the kernel of some OS to uniquely identify a process. That is, each process is numbered to differentiate it from the rest.
+<b> Process: </b> running program.
