@@ -206,3 +206,6 @@ Once you have read a little about Docker and how it works, you will see that the
 <b> Linux kernel: </b> Linux OS kernel. Its main function is to be in charge of controlling the computer hardware. Specifically, this kernel is responsible for managing the system memory and the time of the processes.<br>
 <b> PID: </b> process identifier, integer number used by the kernel of some OS to uniquely identify a process. That is, each process is numbered to differentiate it from the rest.<br>
 <b> Process: </b> running program.<br>
+
+### To end
+I have many more things noted in the notebook. If you want to discuss some of the topics covered here or if you have any questions, do not hesitate to contact me. I will be happy to talk about these technologies and help you with anything. 😉
