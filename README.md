@@ -200,9 +200,9 @@ Once you have read a little about Docker and how it works, you will see that the
   <li><b> docker attach: </b> allows us to establish the connection of a container in the foreground.</li>
 </ul>
 
-### Vocabulario
-<b> Crowler: </b> computer program that inspects pages of the World Wide Web in a methodical and automated way.
-<b> Service: </b> set of activities that seek to respond to the needs of a client.
-<b> Linux kernel: </b> Linux OS kernel. Its main function is to be in charge of controlling the computer hardware. Specifically, this kernel is responsible for managing the system memory and the time of the processes.
-<b> PID: </b> process identifier, integer number used by the kernel of some OS to uniquely identify a process. That is, each process is numbered to differentiate it from the rest.
-<b> Process: </b> running program.
+### Vocabulary
+<b> Crowler: </b> computer program that inspects pages of the World Wide Web in a methodical and automated way.<br>
+<b> Service: </b> set of activities that seek to respond to the needs of a client.<br>
+<b> Linux kernel: </b> Linux OS kernel. Its main function is to be in charge of controlling the computer hardware. Specifically, this kernel is responsible for managing the system memory and the time of the processes.<br>
+<b> PID: </b> process identifier, integer number used by the kernel of some OS to uniquely identify a process. That is, each process is numbered to differentiate it from the rest.<br>
+<b> Process: </b> running program.<br>
