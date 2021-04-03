@@ -137,10 +137,10 @@ Normally, when an SSL certificate is installed, we will have 2 server blocks for
 If you've done some research on self-signed certificates you may have come across the term <b> snakeoil. </b> This term refers to a cryptography concept used to refer to any cryptographic method or product considered false or fraudulent.
 
 ##### Autoindex
-De forma predeterminada, Nginx intenta mostrar una lista de directorios cuando una URL en particular termine en <b>/</b>. Por ejemplo, si usara una ruta <b>/assets/css/</b>, Nginx buscaría en el directorio <b>/css/</b> para ver si puede encontrar un <b>index.html</b> presente, y si no es así nos dará un error 404. Sin embargo, en el caso de que sí tenga un index.html en el directorio, Nginx lo usará para mostrar una lista de directorios de los archivos que hay dentro del directorio.
+By default, Nginx tries to display a list of directories when a particular URL ends in <b> / </b>. For example, if you were to use a <b> /assets/css/ </b> path, Nginx would look in the <b> /css/ </b> directory to see if it can find an <b> index.html </b> > present, and if not, it will give us a 404 error. However, if it does have an index.html in the directory, Nginx will use it to display a directory list of the files within the directory.
 
 ### LEMP Stack
-<b>LEMP</b> es un grupo software que se puede utilizar para servir páginas web dinámicas y aplicaciones web. Este es un acrónimo que describe: el OS <b>Linux</b> (en nuestro caso Debian), con un servidor web <b>Nginx</b>, una base de datos <b>MySQL</b> (en nuestro caso MariaDB) y el procesamiento dinámico es manejado por <b>PHP</b>.
+<b> LEMP </b> is a group of software that can be used to serve dynamic web pages and web applications. This is an acronym that describes: the OS <b> Linux </b> (in our case Debian), with a <b> Nginx </b> web server, a <b> MySQL </b> database ( in our case MariaDB) and dynamic processing is handled by <b> PHP </b>.
 
 ### MariaDB
 A <b> database </b> is a set of data belonging to the same context and systematically stored for later use. In computing, it is an organized collection of structured information, or <b> data </b>, typically stored in a computer system. <br> The software used to manage a database is called <b> "Database Management System "(DBMS). </b> <br>
