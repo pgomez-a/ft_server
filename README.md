@@ -1,6 +1,8 @@
 # ft_server
 <img width="1925" alt="ft_server" src="https://user-images.githubusercontent.com/74931024/117972486-81592200-b32b-11eb-9fa5-730b688b0c1f.png">
 
+**If you want to learn more about IT topics, visit my website:** [**IA Notes**](https://ia-notes.com/)
+
 This project will put us fully into the world of web servers. Once we have seen <a href="https://github.com/pgomez-a/netwhat"> how the network works </a>, we take another step to learn how to set up our own server from any device thanks to Docker.
 
 ### How to run the server?
