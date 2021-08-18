@@ -6,13 +6,18 @@
 This project will put us fully into the world of web servers. Once we have seen <a href="https://github.com/pgomez-a/netwhat"> how the network works </a>, we take another step to learn how to set up our own server from any device thanks to Docker.
 
 ### How to run the server?
-To create the image, within the main directory you must use:
 
-    docker build -t ft_server .
+1. Clone ft_server repository:
+
+       git clone https://github.com/pgomez-a/ft_server.git && cd ft_server
+
+2. To create the image, within the main directory you must use:
+
+       docker build -t ft_server .
     
-Once the images are created, to create the web server:
+3. Once the images are created, to create the web server:
 
-    docker run -d -p 80:80 -p 443:443 ft_server
+       docker run -d -p 80:80 -p 443:443 ft_server
 
 ### Main objectives
 We will have to create a web server with <b> Nginx </b>, within a single <b> Docker container. </b> This container must work on the <b> Debian Buster operating system. </b> Also, our web server has to be able to work with three different services: <b> Wordpress, PhpMyAdmin and MySQL </b>; and make sure they all work together. When possible, our server should be able to use the <b> SSL protocol. </b> <br>
